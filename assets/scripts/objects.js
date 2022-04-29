@@ -20,7 +20,11 @@ const renderMovies = (filter = '') => {
 
   filteredMovies.forEach((movie) => {
     const movieEl = document.createElement('li');
+    if ('info' in movie) {}; // if property is in object
+    if (!('info' in movie)) {}; // if property is not in object
+    if (movie.info === undefined) {}; // if property has not been defined
     const { info, ...otherProps } = movie;
+    if (info) {}; // if info is truty
     console.log(otherProps);
     const { title: movieTitle } = info;
     let text = movieTitle + ' - ';
